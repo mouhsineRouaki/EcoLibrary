@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests\Feature\Feature;
+namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class ApiAccessTest extends TestCase
+class ApiAccess extends TestCase
 {
     /**
      * A basic feature test example.
