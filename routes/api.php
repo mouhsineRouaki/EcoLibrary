@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('categories/{id}/books/popular', [BookController::class, 'popularByCategory']);
     Route::get('categories/{id}/books/new', [BookController::class, 'newByCategory']);
     Route::get('/books' , [BookController::class , 'index']);
+    Route::get('/me/books' , [BookController::class , 'BooksShowed']);
 });
 
 Route::middleware(['auth:sanctum', 'admin'])->prefix('/admin')->group(function (){
