@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class BookView extends Model
@@ -18,11 +19,11 @@ class BookView extends Model
         'created_at',
         'updated_at',
     ];
-    public function Book():HasOne{
-        return $this->hasOne(Book::class);
+    public function Book():BelongsTo{
+        return $this->belongsTo(Book::class);
     }
-    public function User():HasOne{
-        return $this->hasOne(User::class);
+    public function User():BelongsTo{
+        return $this->belongsTo(User::class);
     }
 
 }
