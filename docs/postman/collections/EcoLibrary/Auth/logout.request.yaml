@@ -1,0 +1,13 @@
+$kind: http-request
+name: logout
+description: |-
+  Révoque le token Sanctum de l'utilisateur connecté et le déconnecte.
+
+  **Authentification requise :** Bearer `{{token}}`
+
+  **Réponse succès :** `200 OK`
+url: '{{base_url}}/logout'
+method: POST
+headers:
+  - key: Accept
+    value: application/json

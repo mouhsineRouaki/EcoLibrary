@@ -1,0 +1,28 @@
+$kind: http-request
+name: create book
+description: |-
+  Crée un nouveau livre dans la bibliothèque.
+
+  **Authentification requise :** Bearer `{{token}}` + rôle `admin`
+
+  **Réponse succès :** `201 Created`
+url: '{{base_url}}/admin/books'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "category_id": 1,
+      "title": "Clean Architecture",
+      "slug": "clean-architecture",
+      "description": "Software design principles",
+      "author": "Robert C. Martin",
+      "total_quantity": 12,
+      "available_quantity": 9,
+      "is_active": true
+    }

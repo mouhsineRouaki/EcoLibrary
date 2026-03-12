@@ -1,0 +1,21 @@
+$kind: http-request
+name: register
+description: |-
+  Crée un nouveau compte utilisateur avec le rôle `reader` par défaut.
+
+  **Réponse succès :** `201 Created`
+url: '{{base_url}}/register'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "John Reader",
+      "email": "john@example.com",
+      "password": "password123"
+    }

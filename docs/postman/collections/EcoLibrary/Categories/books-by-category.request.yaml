@@ -1,0 +1,16 @@
+$kind: http-request
+name: books by category
+description: |-
+  Retourne les livres disponibles d'une catégorie donnée.
+
+  Seuls les livres **actifs** avec `available_quantity > 0` sont retournés.
+
+  **Authentification requise :** Bearer `{{token}}`
+url: '{{base_url}}/categories/:id/books'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: id
+    value: '1'

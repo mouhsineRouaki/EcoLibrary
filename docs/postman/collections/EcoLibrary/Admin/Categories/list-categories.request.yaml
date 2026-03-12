@@ -1,0 +1,13 @@
+$kind: http-request
+name: list categories
+description: |-
+  Retourne toutes les catégories de la bibliothèque.
+
+  **Authentification requise :** Bearer `{{token}}` + rôle `admin`
+
+  **Accès refusé (non-admin) :** `403 Forbidden`
+url: '{{base_url}}/admin/categories'
+method: GET
+headers:
+  - key: Accept
+    value: application/json

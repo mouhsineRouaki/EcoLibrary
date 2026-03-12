@@ -1,0 +1,16 @@
+$kind: http-request
+name: delete category
+description: |-
+  Supprime définitivement une catégorie par son identifiant.
+
+  **Authentification requise :** Bearer `{{token}}` + rôle `admin`
+
+  **Réponse succès :** `200 OK`
+url: '{{base_url}}/admin/categories/:id'
+method: DELETE
+headers:
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: id
+    value: '1'

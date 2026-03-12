@@ -1,0 +1,14 @@
+$kind: http-request
+name: get category
+description: |-
+  Retourne le détail d'une catégorie par son identifiant.
+
+  **Authentification requise :** Bearer `{{token}}` + rôle `admin`
+url: '{{base_url}}/admin/categories/:id'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: id
+    value: '1'

@@ -1,0 +1,19 @@
+$kind: http-request
+name: get book
+description: |-
+  Retourne le détail d'un livre par son identifiant.
+
+  Cette route enregistre également une vue dans `book_views`, ce qui impacte les statistiques de popularité.
+
+  **Authentification requise :** Bearer `{{token}}`
+
+  **Réponse succès :** `200 OK`
+  **Livre introuvable :** `404 Not Found`
+url: '{{base_url}}/books/:id'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: id
+    value: '1'

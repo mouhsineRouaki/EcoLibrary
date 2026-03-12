@@ -1,0 +1,14 @@
+$kind: http-request
+name: new books by category
+description: |-
+  Retourne jusqu'à **10 livres** triés par date de création décroissante pour une catégorie donnée (les plus récents en premier).
+
+  **Authentification requise :** Bearer `{{token}}`
+url: '{{base_url}}/categories/:id/books/new'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: id
+    value: '1'

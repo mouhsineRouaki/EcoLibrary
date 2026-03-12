@@ -1,0 +1,13 @@
+$kind: http-request
+name: me
+description: |-
+  Retourne le profil de l'utilisateur actuellement authentifié.
+
+  **Authentification requise :** Bearer `{{token}}`
+
+  **Réponse succès :** `200 OK`
+url: '{{base_url}}/me'
+method: GET
+headers:
+  - key: Accept
+    value: application/json

@@ -1,0 +1,24 @@
+$kind: http-request
+name: search books
+description: |-
+  Recherche des livres par titre et/ou catégorie.
+
+  **Paramètres query supportés :**
+  - `title` : filtre par titre (ex: `clean`)
+  - `category` : filtre par nom ou identifiant de catégorie (ex: `science` ou `1`)
+
+  Les deux paramètres peuvent être combinés.
+
+  **Authentification requise :** Bearer `{{token}}`
+url: '{{base_url}}/books/search'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+queryParams:
+  - key: title
+    value: clean
+    disabled: false
+  - key: category
+    value: ''
+    disabled: true

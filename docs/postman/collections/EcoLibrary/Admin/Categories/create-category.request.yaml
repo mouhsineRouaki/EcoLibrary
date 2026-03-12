@@ -1,0 +1,23 @@
+$kind: http-request
+name: create category
+description: |-
+  Crée une nouvelle catégorie de livres.
+
+  **Authentification requise :** Bearer `{{token}}` + rôle `admin`
+
+  **Réponse succès :** `201 Created`
+url: '{{base_url}}/admin/categories'
+method: POST
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Science",
+      "slug": "science",
+      "description": "Science books"
+    }

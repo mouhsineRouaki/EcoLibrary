@@ -1,0 +1,30 @@
+$kind: collection
+name: EcoLibrary
+description: |-
+  Collection complète pour l'API EcoLibrary — une bibliothèque numérique construite avec Laravel Sanctum.
+
+  ## Base URL
+  Toutes les routes sont préfixées par `/api`.
+  Configurez la variable d'environnement `{{base_url}}` avec `http://127.0.0.1:8000/api`.
+
+  ## Authentification
+  L'API utilise **Laravel Sanctum** avec un token Bearer.
+
+  Flux standard :
+  1. Créer un compte → `POST /api/register`
+  2. Se connecter → `POST /api/login` (récupère le `token`)
+  3. Le token est automatiquement sauvegardé dans la variable `{{token}}`
+  4. Toutes les routes protégées utilisent `Authorization: Bearer {{token}}`
+
+  ## Rôles
+  - `reader` : consulter livres, rechercher, filtrer par catégorie
+  - `admin` : accès complet + gestion livres/catégories + statistiques
+
+  ## Comptes de test (après `php artisan migrate:fresh --seed`)
+  - Admin : `admin@example.com` / `password`
+  - Reader : `test@example.com` / `password`
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{token}}'

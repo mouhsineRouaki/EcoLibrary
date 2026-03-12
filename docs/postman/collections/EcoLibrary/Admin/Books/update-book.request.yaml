@@ -1,0 +1,31 @@
+$kind: http-request
+name: update book
+description: |-
+  Met à jour les informations d'un livre existant.
+
+  **Authentification requise :** Bearer `{{token}}` + rôle `admin`
+
+  **Réponse succès :** `200 OK`
+url: '{{base_url}}/admin/books/:id'
+method: PUT
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+pathVariables:
+  - key: id
+    value: '1'
+body:
+  type: json
+  content: |-
+    {
+      "category_id": 1,
+      "title": "Clean Architecture 2nd Edition",
+      "slug": "clean-architecture-2",
+      "description": "Updated edition",
+      "author": "Robert C. Martin",
+      "total_quantity": 15,
+      "available_quantity": 10,
+      "is_active": true
+    }

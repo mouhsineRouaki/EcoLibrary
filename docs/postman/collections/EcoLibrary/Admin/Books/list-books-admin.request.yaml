@@ -1,0 +1,11 @@
+$kind: http-request
+name: 'list books (admin)'
+description: |-
+  Retourne la liste complète des livres (vue admin, sans filtre de disponibilité).
+
+  **Authentification requise :** Bearer `{{token}}` + rôle `admin`
+url: '{{base_url}}/admin/books'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
