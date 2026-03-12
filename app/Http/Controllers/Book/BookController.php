@@ -264,5 +264,20 @@ class BookController extends Controller
             'total_degraded_quantity' =>$books->sum('degraded_quantity'),
         ]);
     }
+    public function BooksShowed(Request $request){
+        $books = $request->user()
+        ->bookViews()
+        ->with('Book.Category')
+        ->get()
+        ->pluck('Book')
+        ->filter()
+        ->unique('id')
+        ->values();
+        
+        return response()->json([
+            'books' => $books,
+        ]);
+
+    }
 
 }
